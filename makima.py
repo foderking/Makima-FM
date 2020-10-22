@@ -23,7 +23,7 @@ def hl():
     # Description
     pass
 auth = 'AJIBOLA ONAOPEMIPO'
-ver = 'Makima FM version 0.0.0'
+ver = 'Makima FM Version 0.0.0'
 Info = f'{ver}. Type "help" for more information'
 print(''.ljust(135, '-'))
 print(''.ljust(135, '*'))
@@ -31,6 +31,7 @@ print(name)
 print(''.ljust(135, '*'))
 print(''.ljust(135, '-'))
 print(Info)
+print('Press "Enter" to exit..')
 print()
 
 x = None
@@ -42,27 +43,39 @@ while True:
 
       if x == []:
           break
+      elif x[0] == 'write' :
+        pass
+      elif x[0] == 'ren' :
+        pass
+      elif x[0] == 'del' :
+        pass
+      elif x[0] == 'mov' :
+        pass
+      elif x[0] == 'cop' :
+        pass
       elif x[0] == 'ls' :
         for i in os.listdir() :
             size = os.path.getsize(os.path.join(os.getcwd(), i))
             if '-s' in x :
-                if '-m' in x:
+                if 'M' in x:
                     print((str(round(size/1000000, 3)).ljust(10) + ' M-Bytes'.rjust(5)).ljust(20), end= '')
                     print(i)
                     pass
-                elif '-k' in x:
+                elif 'K' in x:
                     print((str(round(size/1000, 3)).ljust(10) + ' K-Bytes'.rjust(5)).ljust(20), end= '')
                     print(i)
-                elif '-g' in x:
+                elif 'G' in x:
                     print((str(round(size/1000000000, 3)).ljust(10) + ' G-Bytes'.rjust(5)).ljust(20), end= '')
                     print(i)
                 else:
                     print((str(size).ljust(10) + ' Bytes'.rjust(5)).ljust(20), end= '')
                     print(i)
             else:
-                print(i, end = ' ')
+                print(i, end = ' || ')
         print()
       elif x[0] == 'cd':
+          if 'C:' in x :
+              x[x.index('C:')] = 'C:\\'
           try:
               for i in x[1:]:
                   new = os.path.join(os.getcwd(), i)
@@ -74,15 +87,21 @@ while True:
       elif x[0] == 'help':
           hl()
       elif x[0] == 'open' : 
-          i = x[1]
-          new = os.path.join(os.getcwd(), i)
-          print()
-          print(r'-*-'*30)
-          print(open(new).read())
-          print(r'-*-'*30)
+          try:
+            i = ' '.join(x[1:])
+            new = os.path.join(os.getcwd(), i)
+            Fil = open(new).read()
+            print()
+            print(r'==='*30)
+            print(r'-*-'*30)
+            print(Fil)
+            print(r'-*-'*30)
+            print(r'==='*30)
+          except :
+            print('Error: Invalid file selected')
 
       else:
-          print('Error: Invalid command!')
+          print('Error: Not a valid command!')
       print()
 
 print('End ...')
