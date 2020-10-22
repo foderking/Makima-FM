@@ -45,8 +45,8 @@ while True:
       elif x[0] == 'ls' :
           if '-s' in x :
             for i in os.listdir() :
-              print(i.ljust(55), end = '')
-              print(str(os.path.getsize(os.path.join(os.getcwd(), i))) + ' Bytes')
+              print((str(os.path.getsize(os.path.join(os.getcwd(), i))).ljust(10) + ' Bytes'.rjust(5)).ljust(20), end= '')
+              print(i)
           else:
               for i in os.listdir() :
                   print(i.ljust(10), end = '')
