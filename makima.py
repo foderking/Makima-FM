@@ -24,7 +24,7 @@ def hl():
     pass
 auth = 'AJIBOLA ONAOPEMIPO'
 ver = 'Makima FM Version 0.0.0'
-Info = f'{ver}. Type "help" for more information'
+Info = f'{ver}. Type "help" for more information.'
 commands = sorted(('open', 'ls', 'cd', 'write', 'ren', 'del', 'mov', 'cop', 'help'))
 print(''.ljust(135, '-'))
 print(''.ljust(135, '*'))
@@ -37,7 +37,8 @@ print()
 
 x = None
 while True:
-      print(os.getcwd() + ' :>>  ', end = '')
+      print(os.getcwd() + ' ~')
+      print( '>>  ', end = '')
       x = input().split()
       print(''.ljust(len(os.getcwd()),'~'))
 
