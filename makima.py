@@ -61,7 +61,11 @@ while True:
               print()
               continue
       elif x[0] == 'help':
-          hl() 
+          hl()
+      elif x[0] == 'open' : 
+          i = x[1]
+          new = os.path.join(os.getcwd(), i)
+          print(open(new, mode='r'))
       else:
           print('Error: Invalid command!')
       print()
