@@ -35,7 +35,7 @@ print()
 
 x = None
 while True:
-      print(os.getcwd() + ' $  ', end = '')
+      print(os.getcwd() + ' >>  ', end = '')
       x = input().split()
       print(''.ljust(len(os.getcwd()),'~'))
 
@@ -65,7 +65,10 @@ while True:
       elif x[0] == 'open' : 
           i = x[1]
           new = os.path.join(os.getcwd(), i)
+          print(r'-*-'*30)
           print(open(new).read())
+          print(r'-*-'*30)
+
       else:
           print('Error: Invalid command!')
       print()
