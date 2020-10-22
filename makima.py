@@ -35,7 +35,7 @@ print()
 
 x = None
 while True:
-      print(os.getcwd() + ' >>  ', end = '')
+      print(os.getcwd() + ' :>>  ', end = '')
       x = input().split()
       print(''.ljust(len(os.getcwd()),'~'))
 
@@ -43,14 +43,25 @@ while True:
       if x == []:
           break
       elif x[0] == 'ls' :
-          if '-s' in x :
-            for i in os.listdir() :
-              print((str(os.path.getsize(os.path.join(os.getcwd(), i))).ljust(10) + ' Bytes'.rjust(5)).ljust(20), end= '')
-              print(i)
-          else:
-              for i in os.listdir() :
-                  print(i.ljust(10), end = '')
-          print()
+        for i in os.listdir() :
+            size = os.path.getsize(os.path.join(os.getcwd(), i))
+            if '-s' in x :
+                if '-m' in x:
+                    print((str(round(size/1000000, 3)).ljust(10) + ' M-Bytes'.rjust(5)).ljust(20), end= '')
+                    print(i)
+                    pass
+                elif '-k' in x:
+                    print((str(round(size/1000, 3)).ljust(10) + ' K-Bytes'.rjust(5)).ljust(20), end= '')
+                    print(i)
+                elif '-g' in x:
+                    print((str(round(size/1000000000, 3)).ljust(10) + ' G-Bytes'.rjust(5)).ljust(20), end= '')
+                    print(i)
+                else:
+                    print((str(size).ljust(10) + ' Bytes'.rjust(5)).ljust(20), end= '')
+                    print(i)
+            else:
+                print(i, end = ' ')
+        print()
       elif x[0] == 'cd':
           try:
               for i in x[1:]:
@@ -75,3 +86,4 @@ while True:
       print()
 
 print('End ...')
+print()
