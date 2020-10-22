@@ -25,13 +25,14 @@ def hl():
 auth = 'AJIBOLA ONAOPEMIPO'
 ver = 'Makima FM Version 0.0.0'
 Info = f'{ver}. Type "help" for more information'
+commands = sorted(('open', 'ls', 'cd', 'write', 'ren', 'del', 'mov', 'cop', 'help'))
 print(''.ljust(135, '-'))
 print(''.ljust(135, '*'))
 print(name)
 print(''.ljust(135, '*'))
 print(''.ljust(135, '-'))
 print(Info)
-print('Press "Enter" to exit..')
+print('Press "Enter" to exit, and "view" to see commands ...')
 print()
 
 x = None
@@ -99,7 +100,9 @@ while True:
             print(r'==='*30)
           except :
             print('Error: Invalid file selected')
-
+      elif x[0] == 'view' :
+          print(commands)
+          print('To view more info on commands, type "help"')  
       else:
           print('Error: Not a valid command!')
       print()
