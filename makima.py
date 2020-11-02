@@ -65,17 +65,16 @@ while True:
             size = os.path.getsize(os.path.join(os.getcwd(), i))
             if '-s' in x :
                 if 'M' in x:
-                    print((str(round(size/1000000, 3)).ljust(10) + ' M-Bytes'.rjust(5)).ljust(20), end= '')
+                    print((str(round(size/1000000, 3)).rjust(10) + ' M-Bytes'.rjust(5)).ljust(20), end= '')
                     print(i)
-                    pass
                 elif 'K' in x:
-                    print((str(round(size/1000, 3)).ljust(10) + ' K-Bytes'.rjust(5)).ljust(20), end= '')
+                    print((str(round(size/1000, 3)).rjust(10) + ' K-Bytes'.rjust(5)).ljust(20), end= '')
                     print(i)
                 elif 'G' in x:
-                    print((str(round(size/1000000000, 3)).ljust(10) + ' G-Bytes'.rjust(5)).ljust(20), end= '')
+                    print((str(round(size/1000000000, 3)).rjust(10) + ' G-Bytes'.rjust(5)).ljust(20), end= '')
                     print(i)
                 else:
-                    print((str(size).ljust(10) + ' Bytes'.rjust(5)).ljust(20), end= '')
+                    print((str(size).rjust(10) + ' Bytes'.rjust(5)).ljust(20), end= '')
                     print(i)
             else:
                 print(i, end = ' || ')
