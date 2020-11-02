@@ -25,7 +25,7 @@ def hl():
 auth = 'AJIBOLA ONAOPEMIPO'
 ver = 'Makima FM Version 0.0.0'
 Info = f'{ver}. Type "help" for more information.'
-commands = sorted(('open', 'ls', 'check', 'cd', 'write', 'ren', 'del', 'mov', 'make', 'cop', 'help'))
+commands = sorted(('read', 'ls', 'check', 'cd', 'write', 'ren', 'del', 'mov', 'make', 'cop', 'help'))
 print(''.ljust(135, '-'))
 print(''.ljust(135, '*'))
 print(name)
@@ -93,7 +93,7 @@ while True:
               continue
       elif x[0] == 'help':
           hl()
-      elif x[0] == 'open' : 
+      elif x[0] == 'read' : 
           try:
             i = ' '.join(x[1:])
             new = os.path.join(os.getcwd(), i)
