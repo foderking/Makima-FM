@@ -52,6 +52,10 @@ while True:
       elif x[0] == 'check' :
         print(os.path.exists(os.path.join(os.getcwd(), x[1]))) 
       elif x[0] == 'write' :
+        new = os.path.join(os.getcwd(), x[1])
+        Fil = open(new, 'a')      
+        Fil.write(' '.join(x[2:]) + '\n') 
+        Fil.close()      
         pass
       elif x[0] == 'ren' :
         pass
@@ -104,6 +108,7 @@ while True:
             print(Fil)
             print(r'-*-'*30)
             print(r'==='*30)
+            open(new).close()
           except :
             print('Error: Invalid file selected')
       elif x[0] == 'info' :
