@@ -25,7 +25,7 @@ def hl():
 auth = 'AJIBOLA ONAOPEMIPO'
 ver = 'Makima FM Version 0.0.0'
 Info = f'{ver}. Type "help" for more information.'
-commands = sorted(('open', 'ls', 'cd', 'write', 'ren', 'del', 'mov', 'cop', 'help'))
+commands = sorted(('open', 'ls', 'cd', 'write', 'ren', 'del', 'mov', 'make', 'cop', 'help'))
 print(''.ljust(135, '-'))
 print(''.ljust(135, '*'))
 print(name)
@@ -45,6 +45,11 @@ while True:
 
       if x == []:
           break
+      elif x[0] == 'make' :
+        made_path = os.path.join(os.getcwd(), x[1])
+        os.makedirs(made_path)
+        print(x[1], 'has been created in', os.getcwd())
+
       elif x[0] == 'write' :
         pass
       elif x[0] == 'ren' :
