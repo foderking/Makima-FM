@@ -32,7 +32,7 @@ print(name)
 print(''.ljust(135, '*'))
 print(''.ljust(135, '-'))
 print(Info)
-print('Press "Enter" to exit, and "view" to see commands ...')
+print('Press "Enter" to exit, and "info" to see commands ...')
 print()
 
 x = None
@@ -105,7 +105,7 @@ while True:
             print(r'==='*30)
           except :
             print('Error: Invalid file selected')
-      elif x[0] == 'view' :
+      elif x[0] == 'info' :
           print(commands)
           print('To view more info on commands, type "help"')  
       else:
