@@ -56,6 +56,7 @@ while True:
         Fil = open(new, 'a')      
         Fil.write(' '.join(x[2:]) + '\n') 
         Fil.close()      
+        
         pass
       elif x[0] == 'ren' :
         pass
