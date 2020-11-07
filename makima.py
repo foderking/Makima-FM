@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os
+import os, shutil
 
 name = r"""
   __  __           _      _                         ______   _   _            __  __
@@ -65,7 +65,11 @@ while True:
       elif x[0] == 'mov' :
         pass
       elif x[0] == 'cop' :
-        pass
+        if x[1] = '-r':
+          shutil.copytree(x[-2], x[-1])
+        else:
+          shutil.copy(x[-2], x[-1])
+
       elif x[0] == 'ls' :
         for i in os.listdir() :
             size = os.path.getsize(os.path.join(os.getcwd(), i))
