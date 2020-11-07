@@ -63,12 +63,20 @@ while True:
       elif x[0] == 'del' :
         pass
       elif x[0] == 'mov' :
-        pass
-      elif x[0] == 'cop' :
-        if x[1] = '-r':
-          shutil.copytree(x[-2], x[-1])
+        print('afsdasdf')
+        val = input(f'Are you sure you want to move {x[1]} to {x[2]} (Type Y or N): ')
+        if val.lower() == 'y':
+          m_file = shutil.move(x[1], x[2])
+          print(f'{os.path.abspath(m_file)} moved')
         else:
-          shutil.copy(x[-2], x[-1])
+          pass
+      elif x[0] == 'cop' :
+        if x[1] == '-r':
+          c_file = shutil.copytree(x[-2], x[-1])
+          print(f'{os.path.abspath(c_file)} copied')
+        else:
+          c_file = shutil.copy(x[-2], x[-1])
+          print(f'{os.path.abspath(c_file)} copied')
 
       elif x[0] == 'ls' :
         for i in os.listdir() :
