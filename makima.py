@@ -64,7 +64,7 @@ while True:
 
         pass
       elif x[0] == 'del' :
-        val = input('Are you sure you want to delete the file? ( y or n ): ')
+        val = input('Are you sure you want PERMANENTLY to delete the file? ( y or n ): ')
         if val.lower() == 'y':
           if x[1] == '-r':
             shutil.rmtree(x[-1])
