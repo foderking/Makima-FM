@@ -59,12 +59,15 @@ while True:
         
         pass
       elif x[0] == 'ren' :
+        m_file = shutil.move(x[1], x[2])
+        print(f'File renamed to {m_file}')
+
         pass
       elif x[0] == 'del' :
         pass
       elif x[0] == 'mov' :
         print('afsdasdf')
-        val = input(f'Are you sure you want to move {x[1]} to {x[2]} (Type Y or N): ')
+        val = input(f'Are you sure you want to move {x[1]} to {x[2]}? (Type Y or N): ')
         if val.lower() == 'y':
           m_file = shutil.move(x[1], x[2])
           print(f'{os.path.abspath(m_file)} moved')
