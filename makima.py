@@ -64,7 +64,15 @@ while True:
 
         pass
       elif x[0] == 'del' :
-        pass
+        val = input('Are you sure you want to delete the file? ( y or n ): ')
+        if val.lower() == 'y':
+          if x[1] == '-r':
+            shutil.rmtree(x[-1])
+          else:
+            os.unlink(x[-1])
+          print(f'{os.path.abspath(x[-1])} deleted')
+        else:
+          pass
       elif x[0] == 'mov' :
         print('afsdasdf')
         val = input(f'Are you sure you want to move {x[1]} to {x[2]}? (Type Y or N): ')

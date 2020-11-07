@@ -8,10 +8,10 @@ TO-DO LIST:
 The file manager should support popular operations in file managers like:
 
 * Changing directories                                            ( DONE )
-* Reading plain text files                                        ( DONE )
+* Reading and writing plain text files                            ( DONE )
 * Opening Files                                                   
-* Renaming files
+* Renaming files                                                  ( DONE )
 * Writing to files
-* Moving, Copying, and deleting files
+* Moving, Copying, and deleting files                             ( DONE )
 * searching for files
 * modifying file attributes and changing permissions
