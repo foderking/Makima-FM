@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, shutil
+import os, shutil, zipfile
 
 name = r"""
   __  __           _      _                         ______   _   _            __  __
@@ -25,7 +25,7 @@ def hl():
 auth = 'AJIBOLA ONAOPEMIPO'
 ver = 'Makima FM Version 0.0.0'
 Info = f'{ver}. Type "help" for more information.'
-commands = sorted(('read', 'ls', 'check', 'cd', 'write', 'ren', 'del', 'mov', 'make', 'cop', 'help'))
+commands = sorted(('read', 'ls', 'check', 'cd', 'write', 'zip', 'unzip', 'ren', 'del', 'mov', 'make', 'cop', 'help'))
 print(''.ljust(135, '-'))
 print(''.ljust(135, '*'))
 print(name)
@@ -45,6 +45,7 @@ while True:
 
       if x == []:
           break
+
       elif x[0] == 'make' :
         made_path = os.path.join(os.getcwd(), x[1])
         os.makedirs(made_path)
@@ -57,12 +58,10 @@ while True:
         Fil.write(' '.join(x[2:]) + '\n') 
         Fil.close()      
         
-        pass
       elif x[0] == 'ren' :
         m_file = shutil.move(x[1], x[2])
         print(f'File renamed to {m_file}')
 
-        pass
       elif x[0] == 'del' :
         val = input('Are you sure you want PERMANENTLY to delete the file? ( y or n ): ')
         if val.lower() == 'y':
@@ -73,6 +72,7 @@ while True:
           print(f'{os.path.abspath(x[-1])} deleted')
         else:
           pass
+
       elif x[0] == 'mov' :
         print('afsdasdf')
         val = input(f'Are you sure you want to move {x[1]} to {x[2]}? (Type Y or N): ')
@@ -81,6 +81,7 @@ while True:
           print(f'{os.path.abspath(m_file)} moved')
         else:
           pass
+
       elif x[0] == 'cop' :
         if x[1] == '-r':
           c_file = shutil.copytree(x[-2], x[-1])
@@ -108,6 +109,7 @@ while True:
             else:
                 print(i, end = ' || ')
         print()
+
       elif x[0] == 'cd':
           if 'C:' in x :
               x[x.index('C:')] = 'C:\\'
@@ -119,8 +121,23 @@ while True:
               print('Error: Invalid directory selected')
               print()
               continue
+
       elif x[0] == 'help':
           hl()
+
+      elif x[0] == 'zip':
+        file = zipfile.ZipFile(x[-1] + '.zip', 'w')
+        file.write(x[-1], compress_type = zipfile.ZIP_DEFLATED)
+        file.close()
+
+      elif x[0] == 'unzip':
+        file = zipfile.ZipFile(x[-1])
+        if len(x) == 3:
+          file.extractall(x[1])
+        else:
+          file.extractall()
+        file.close()
+
       elif x[0] == 'read' : 
           try:
             i = ' '.join(x[1:])
@@ -135,6 +152,7 @@ while True:
             open(new).close()
           except :
             print('Error: Invalid file selected')
+
       elif x[0] == 'info' :
           print(commands)
           print('To view more info on commands, type "help"')  
