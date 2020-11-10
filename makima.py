@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, shutil, zipfile
+import os, shutil, zipfile, re
 
 name = r"""
   __  __           _      _                         ______   _   _            __  __
@@ -25,7 +25,7 @@ def hl():
 auth = 'AJIBOLA ONAOPEMIPO'
 ver = 'Makima FM Version 0.0.0'
 Info = f'{ver}. Type "help" for more information.'
-commands = sorted(('read', 'ls', 'check', 'cd', 'write', 'zip', 'unzip', 'ren', 'del', 'mov', 'make', 'cop', 'help'))
+commands = sorted(('read', 'ls', 'check', 'search', 'cd', 'write', 'zip', 'unzip', 'ren', 'del', 'mov', 'make', 'cop', 'help'))
 print(''.ljust(135, '-'))
 print(''.ljust(135, '*'))
 print(name)
@@ -89,6 +89,14 @@ while True:
         else:
           c_file = shutil.copy(x[-2], x[-1])
           print(f'{os.path.abspath(c_file)} copied')
+      
+      elif x[0] == 'search':
+        files = os.listdir()
+        if x[1] == 'exact':
+          result = [i for i in files if re.match(x[-1], i) ]
+        else:
+          result = [i for i in files if re.search(x[-1], i) ]
+        print(result)
 
       elif x[0] == 'ls' :
         for i in os.listdir() :

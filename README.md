@@ -11,7 +11,7 @@ The file manager should support popular operations in file managers like:
 * Reading and writing plain text files                            ( DONE )
 * Opening Files                                                   
 * Renaming files                                                  ( DONE )
-* Zipping files
+* Zipping files                                                   ( DONE )
 * Moving, Copying, and deleting files                             ( DONE )
-* searching for files
+* searching for files                                             ( DONE )
 * modifying file attributes and changing permissions
