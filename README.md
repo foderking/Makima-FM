@@ -1,6 +1,9 @@
 # Makima-FM
 A file manager written in python.
 
+I wrote this project to teach myself python3
+
+
 # This is one of my first real projects while I'm learning python
 
 TO-DO LIST:
